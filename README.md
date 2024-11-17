@@ -2,6 +2,54 @@
 
 This project is a deep learning-based emotion detection model built using TensorFlow and ResNet50. It leverages the AffectNet dataset to classify human facial expressions into categories such as _happy_, _sad_, _angry_, and more.
 
+---
+
+## About the AffectNet Dataset
+
+AffectNet is a large facial expression dataset with around **0.4 million images** manually labeled for the presence of **eight facial expressions**:
+
+- Neutral
+- Happy
+- Angry
+- Sad
+- Fear
+- Surprise
+- Disgust
+- Contempt
+
+The dataset also provides information on the intensity of **valence** and **arousal** for each image. To accommodate common memory constraints, the resolution of all images was reduced to **96x96 pixels**, ensuring uniform size.
+
+---
+
+### Emotion Classes Mapping
+
+In AffectNet, the eight emotion classes are mapped as follows:
+
+| Class ID | Emotion  |
+| -------- | -------- |
+| 0        | Anger    |
+| 1        | Contempt |
+| 2        | Disgust  |
+| 3        | Fear     |
+| 4        | Happy    |
+| 5        | Neutral  |
+| 6        | Sad      |
+| 7        | Surprise |
+
+---
+
+### Data Split
+
+The dataset is split as follows:
+
+- **70%** for training
+- **20%** for validation
+- **10%** for testing
+
+This ensures a balanced distribution of data for model training and evaluation.
+
+---
+
 ## Project Structure
 
 ```
@@ -29,6 +77,8 @@ emotion_detection_resnet50/
 └── README.md                      # Project description and instructions
 ```
 
+---
+
 ## Setup
 
 ### 1. Clone the Repository
@@ -40,6 +90,8 @@ git clone <repository-url>
 cd emotion_detection_resnet50
 ```
 
+---
+
 ### 2. Create and Activate a Virtual Environment
 
 Create a virtual environment to manage project dependencies:
@@ -47,8 +99,10 @@ Create a virtual environment to manage project dependencies:
 ```bash
 python -m venv venv
 . venv/Scripts/activate  # Windows
-source venv/bin/activate      # macOS/Linux
+source venv/bin/activate  # macOS/Linux
 ```
+
+---
 
 ### 3. Install Dependencies
 
@@ -58,9 +112,11 @@ Install the required Python packages from `requirements.txt`:
 pip install -r requirements.txt
 ```
 
+---
+
 ### 4. Download the Dataset
 
-Download the AffectNet dataset in YOLO format from [Kaggle](https://www.kaggle.com/datasets/fatihkgg/affectnet-yolo-format?select=YOLO_format). Extract the `data/` folder into the root directory of the repository.
+Download the AffectNet dataset in YOLO format from [Kaggle](https://www.kaggle.com/datasets/fatihkgg/affectnet-yolo-format?select=YOLO_format). Extract the `YOLO_format/` folder into the root directory of the repository, rename it to `data/`, and remove `data.yaml`.
 
 The extracted folder structure should look like this:
 
@@ -77,6 +133,8 @@ data/
     ├── labels/
 ```
 
+---
+
 ### 5. Organize the Data
 
 Run the `organize_data.py` script to organize the images into class-specific folders:
@@ -90,18 +148,35 @@ After running the script, the `data/` folder will be reorganized into the follow
 ```
 data/
 ├── train/
+│   ├── anger/
+│   ├── contempt/
+│   ├── disgust/
+│   ├── fear/
 │   ├── happy/
+│   ├── neutral/
 │   ├── sad/
-│   └── ... (other emotions)
+│   └── surprise/
 ├── val/
+│   ├── anger/
+│   ├── contempt/
+│   ├── disgust/
+│   ├── fear/
 │   ├── happy/
+│   ├── neutral/
 │   ├── sad/
-│   └── ... (other emotions)
+│   └── surprise/
 └── test/
+    ├── anger/
+    ├── contempt/
+    ├── disgust/
+    ├── fear/
     ├── happy/
+    ├── neutral/
     ├── sad/
-    └── ... (other emotions)
+    └── surprise/
 ```
+
+---
 
 ### 6. Configure Settings
 
@@ -117,6 +192,8 @@ num_epochs: 20
 model_save_path: "./models/emotion_detection_model.h5"
 ```
 
+---
+
 ## Usage
 
 ### Training the Model
@@ -127,6 +204,8 @@ To train the ResNet50-based emotion detection model, run:
 python src/train.py
 ```
 
+---
+
 ### Evaluating the Model
 
 Evaluate the trained model on the test set by running:
@@ -134,6 +213,8 @@ Evaluate the trained model on the test set by running:
 ```bash
 python src/evaluate.py
 ```
+
+---
 
 ### Making Predictions
 
@@ -143,6 +224,8 @@ Use the `predict.py` script to make predictions on new images:
 python src/predict.py --image_path path/to/image.jpg
 ```
 
+---
+
 ## Files Description
 
 - **data_preprocessing.py**: Functions for loading, augmenting, and preprocessing data.
@@ -151,6 +234,8 @@ python src/predict.py --image_path path/to/image.jpg
 - **evaluate.py**: Evaluates the model on the test set and outputs metrics.
 - **predict.py**: Loads the trained model and makes predictions on input images.
 - **organize_data.py**: Organizes images into class-specific folders based on YOLO-style label files.
+
+---
 
 ## Dependencies
 
@@ -166,9 +251,13 @@ Install the following dependencies using `pip install -r requirements.txt`:
 - PyYAML
 - tqdm
 
+---
+
 ## Results
 
 Include details of your training results, such as accuracy, loss, and any sample predictions, to document the model's performance.
+
+---
 
 ## Troubleshooting
 
