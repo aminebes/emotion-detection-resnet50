@@ -1,0 +1,29 @@
+# Data paths
+data_path: "./data"
+train_data_dir: "./data/train"
+val_data_dir: "./data/val"
+test_data_dir: "./data/test"
+
+# Model parameters
+num_classes: 8 # Number of emotion classes
+input_shape: [96, 96, 3] # Input image dimensions for ResNet50
+
+# Training parameters
+train_batch_size: 32 # Batch size for training
+val_batch_size: 32 # Batch size for validation
+test_batch_size: 32 # Batch size for testing
+learning_rate: 0.0001 # Learning rate for the optimizer
+num_epochs: 20 # Number of training epochs
+
+# Model saving
+model_save_path: "./models/emotion_detection_model.h5" # Path to save the trained model
+
+# Data augmentation
+augmentation:
+  rotation_range: 20 # Maximum rotation for data augmentation
+  width_shift_range: 0.2 # Width shift range as a fraction of total width
+  height_shift_range: 0.2 # Height shift range as a fraction of total height
+  shear_range: 0.15 # Shear intensity for shear transformation
+  zoom_range: 0.2 # Zoom range for zooming in and out
+  horizontal_flip: True # Randomly flip images horizontally
+  fill_mode: "nearest" # Strategy for filling in new pixels during transformations

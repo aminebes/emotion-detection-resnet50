@@ -1,0 +1,23 @@
+# Core deep learning framework
+tensorflow                # Provides tools to build and train deep learning models
+
+# Essential libraries for data manipulation and processing
+numpy                     # Support for large, multi-dimensional arrays and matrix operations
+pandas                    # Data analysis library, useful for handling structured data (e.g., CSV files)
+
+# Image processing library
+opencv-python             # Used for image loading and processing tasks (e.g., resizing images)
+
+# Libraries for data visualization
+matplotlib                # Basic plotting library for visualizations
+seaborn                   # Statistical data visualization, builds on top of matplotlib
+
+# Machine learning utilities
+scikit-learn              # Provides functions for evaluation metrics, data splitting, etc.
+
+# Additional tools for enhanced interactivity and progress tracking
+ipython                   # Interactive Python shell, useful in Jupyter notebooks and enhances interactive coding
+tqdm                      # Displays progress bars for loops, useful for tracking progress during training or data processing
+
+# Configuration file handling
+pyyaml                    # Allows reading and writing YAML files (e.g., config.yaml for storing parameters)
