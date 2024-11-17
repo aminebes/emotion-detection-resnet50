@@ -11,6 +11,9 @@ venv/
 # Data folder
 data/
 
+# Videos folder
+videos/
+
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 

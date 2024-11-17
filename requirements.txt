@@ -1,5 +1,6 @@
 # Core deep learning framework
 tensorflow                # Provides tools to build and train deep learning models
+tensorflowjs              # Used for webpage deployment
 
 # Essential libraries for data manipulation and processing
 numpy                     # Support for large, multi-dimensional arrays and matrix operations

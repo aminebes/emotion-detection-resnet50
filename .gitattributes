@@ -9,12 +9,14 @@
 *.md text eol=lf
 *.txt text eol=lf
 .gitattributes text eol=lf
+.gitignore text eol=lf
 
 # Jupyter Notebook files
 *.ipynb text eol=lf
 
-# Images and binaries
+# Images, videos and binaries
 *.jpg -text
 *.png -text
 *.gif -text
 *.exe -text
+*.mp4 -text
