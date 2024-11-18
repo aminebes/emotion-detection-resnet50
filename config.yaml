@@ -1,31 +1,49 @@
-# Data paths
-data_path: "./data"
-train_data_dir: "./data/train"
-val_data_dir: "./data/val"
-test_data_dir: "./data/test"
+# Paths
+paths:
+  data: "./data" # Base path for data
+  train_data: "./data/train" # Path to training data
+  val_data: "./data/val" # Path to validation data
+  test_data: "./data/test" # Path to test data
+  video: "./videos" # Path for video inference
+  performance: "./performance" # Path for evaluation metrics and logs
+  results: "./results" # Path for inference outputs
+  model_save: "./models/emotion_detection_model.h5" # Path to save the trained model
 
-# Video path for inference
-video_path: "./videos"
+# Data splits
+data_splits:
+  train: "train" # Name of the train images folder
+  val: "val" # Name of the validation images folder
+  test: "test" # Name of the test images folder
 
-# Performance and Results paths
-performance_path: "./performance"
-results_path: "./results"
+# YOLO Data splits
+yolo_splits:
+  images: "images" # Name of the images folder
+  labels: "labels" # Name of the labels folder
 
-# Model parameters
-num_classes: 8 # Number of emotion classes
-input_shape: [96, 96, 3] # Input image dimensions for ResNet50
+# Model Parameters
+model:
+  num_classes: 8 # Number of emotion classes
+  input_shape: [96, 96, 3] # Input image dimensions for ResNet50
+  unclassified: "Unclassified" # Class for unclassified items
+  class_names: # Names of emotion classes
+    - Anger
+    - Contempt
+    - Disgust
+    - Fear
+    - Happy
+    - Neutral
+    - Sad
+    - Surprise
 
-# Training parameters
-train_batch_size: 32 # Batch size for training
-val_batch_size: 32 # Batch size for validation
-test_batch_size: 32 # Batch size for testing
-learning_rate: 0.0001 # Learning rate for the optimizer
-num_epochs: 20 # Number of training epochs
+# Training Parameters
+training:
+  train_batch_size: 32 # Batch size for training
+  val_batch_size: 32 # Batch size for validation
+  test_batch_size: 32 # Batch size for testing
+  learning_rate: 0.0001 # Learning rate for the optimizer
+  num_epochs: 20 # Number of training epochs
 
-# Model saving
-model_save_path: "./models/emotion_detection_model.h5" # Path to save the trained model
-
-# Data augmentation
+# Data Augmentation Parameters
 augmentation:
   rotation_range: 20 # Maximum rotation for data augmentation
   width_shift_range: 0.2 # Width shift range as a fraction of total width
@@ -34,3 +52,7 @@ augmentation:
   zoom_range: 0.2 # Zoom range for zooming in and out
   horizontal_flip: True # Randomly flip images horizontally
   fill_mode: "nearest" # Strategy for filling in new pixels during transformations
+
+# # Supported image extensions
+extensions:
+  image_extensions: [".jpg", ".png"] # Supported image file extensions
