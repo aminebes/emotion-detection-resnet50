@@ -22,3 +22,6 @@ tqdm                      # Displays progress bars for loops, useful for trackin
 
 # Configuration file handling
 pyyaml                    # Allows reading and writing YAML files (e.g., config.yaml for storing parameters)
+
+# System resource monitoring
+psutil                    # Monitor system (CPU, memory, disk, etc.) usage during runtime

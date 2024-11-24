@@ -60,7 +60,9 @@ emotion_detection_resnet50/
 │   ├── evaluate.py                # Model evaluation script
 │   ├── predict.py                 # Script for making predictions with the trained model
 │   ├── organize_data.py           # Script to organize the data into class folders
-│   └── inference.py               # Script for running inference on video or camera
+│   ├── inference.py               # Script for running inference on video or camera
+│   ├── config.py                  # Configuration management and validation
+│   └── utils.py                   # Utility functions (logging, plotting, memory usage, etc.)
 ├── notebooks/                     # Jupyter notebooks for exploration and testing
 │   └── data_analysis.ipynb
 ├── config.yaml                    # Configurations for training (paths, hyperparameters, etc.)
@@ -265,6 +267,7 @@ Install the following dependencies using `pip install -r requirements.txt`:
 - PyYAML
 - tqdm
 - tensorflowjs
+- psutil
 
 ## Performance and Results
 
